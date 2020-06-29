@@ -1,6 +1,8 @@
-### Hi there 👋
+![I love coffee](https://raw.githubusercontent.com/Staubgeborener/Staubgeborener/master/coffee.gif)
 
 <!--
+:coffee: :mag_right: :computer: :wrench:
+
 **Staubgeborener/Staubgeborener** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
