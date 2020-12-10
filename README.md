@@ -1,8 +1,7 @@
 [![I love coffee](https://raw.githubusercontent.com/Staubgeborener/Staubgeborener/master/coffee.gif)](https://gist.github.com/Staubgeborener/
 )
 
-https://gist.github.com/Staubgeborener/
-
+[ [:man_technologist: Gist graveyard](https://gist.github.com/Staubgeborener/) | [:star: Given stars](https://github.com/Staubgeborener/stars/) ]
 <!--
 :coffee: :mag_right: :computer: :wrench:
 
