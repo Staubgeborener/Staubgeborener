@@ -2,7 +2,7 @@
 [![I love coffee](https://raw.githubusercontent.com/Staubgeborener/Staubgeborener/master/coffee.gif)](https://gist.github.com/Staubgeborener/
 )
 -->
-[ [:man_technologist: Gist graveyard](https://gist.github.com/Staubgeborener/) | [:star: Given stars](https://github.com/Staubgeborener/stars/) | [:computer: My setup](https://ghostbin.co/paste/73yr) ]
+[ [:man_technologist: Gist graveyard](https://gist.github.com/Staubgeborener/) | [:star: Given stars](https://github.com/Staubgeborener/stars/) | [:computer: My setup](https://ghostbin.co/paste/u4ne) ]
 <!--
 :coffee: :mag_right: :computer: :wrench:
 
