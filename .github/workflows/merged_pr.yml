@@ -28,7 +28,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_USERNAME: ${{ github.actor }}
       run: |
-        python list_merged_prs.py
+        python merged_pr.py
 
     - name: Commit and Push Changes to README.md
       run: |
