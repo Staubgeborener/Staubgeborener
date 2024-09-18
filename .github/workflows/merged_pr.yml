@@ -1,0 +1,86 @@
+name: List Merged Pull Requests in README.md
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: List Merged Pull Requests and Update README.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USERNAME: ${{ github.actor }}
+      run: |
+        python name: List Merged Pull Requests in README.md
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: List Merged Pull Requests and Update README.md
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USERNAME: ${{ github.actor }}
+      run: |
+        python merged_pr.py
+
+    - name: Commit and Push Changes to README.md
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        # Check if there are any changes to commit
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m "Update README.md with merged PRs"
+          git push
+        else
+          echo "No changes to commit."
+        fi
+
+
+    - name: Commit and Push Changes to README.md
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        # Check if there are any changes to commit
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m "Update README.md with merged PRs"
+          git push
+        else
+          echo "No changes to commit."
+        fi
