@@ -42,7 +42,7 @@ if response.status_code == 200:
         file.write("")
     
     with open(readme_path, 'a') as file:
-        file.write(f"\n\[ 👨‍💻 [Gist graveyard](https://gist.github.com/{username}/) | ⭐ [Given stars](https://github.com/{username}/stars?tab=readme-ov-file#awesome-stars-) \]\n\nI worked on the following projects:\n")
+        file.write(f"\n\[ 👨‍💻 [Gist graveyard](https://gist.github.com/{username}/) | ⭐ [Given stars](https://github.com/{username}/stars?tab=readme-ov-file#awesome-stars-) \]\n\nI worked on the following projects \(based on merged pull requests\):\n")
 
     sorted_repos = sorted(repo_list, key=lambda x: x.lower())
     with open(readme_path, 'a') as file:
@@ -50,19 +50,8 @@ if response.status_code == 200:
 
     subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"], check=True)
     subprocess.run(["git", "config", "--global", "user.email", "github-actions@github.com"], check=True)
-  
-    status_result = subprocess.run(["git", "status", "--porcelain"], stdout=subprocess.PIPE, text=True)
-    if status_result.stdout:
-        commit_result = subprocess.run(["git", "commit", "-am", "Update README.md with merged PRs"], text=True, capture_output=True)
-        
-        if commit_result.returncode == 0:
-            subprocess.run(["git", "push"], check=True)
-            print("Changes committed and pushed.")
-        else:
-            print(f"Failed to commit changes: {commit_result.stderr}")
-    else:
-        print("No changes to commit. Skipping commit.")
-    
+    subprocess.run(["git", "push"], check=True)
+    print("Changes committed and pushed.")
     print(f"Updated README.md with {len(sorted_repos)} unique repositories where PRs were merged.")
     exit(0)
 else:
